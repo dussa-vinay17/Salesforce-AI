@@ -1,0 +1,32 @@
+<template>
+    <div class="chat-container">
+
+        <div class="header">
+            <span class="title">⚡ AI Salesforce Assistant</span>
+            <span class="subtitle">Powered by ChatGPT + Salesforce</span>
+        </div>
+
+        <div class="messages" lwc:dom="manual" data-msg-area></div>
+
+        <div class="quick-buttons">
+            <button class="chip" onclick={askPipeline}>📊 Pipeline</button>
+            <button class="chip" onclick={askStage}>📈 Stage Summary</button>
+            <button class="chip" onclick={askOwner}>👤 Owner Summary</button>
+            <button class="chip" onclick={askClosedWon}>🏆 Closed Won</button>
+            <button class="chip" onclick={askOpenPipeline}>💼 Open Pipeline</button>
+        </div>
+
+        <div class="input-area">
+            <lightning-textarea
+                value={userInput}
+                placeholder="Type or speak your question..."
+                onchange={handleInput}>
+            </lightning-textarea>
+
+            <button class="mic-btn" onclick={startVoiceInput}>🎤</button>
+
+            <button class="send-btn" onclick={sendMessage}>Send 🚀</button>
+        </div>
+
+    </div>
+</template>
